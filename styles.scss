@@ -3,10 +3,37 @@
 
 
 
-body {
-    background-color: white;
+.projects {
+    &__group__item--thumbnail{
+       
+            border: 2px solid black;
+
+            @media only screen and (max-width: 600px) {
+                display: flex;
+                flex-wrap: wrap;
+                width: 20vw;
+            }
+        
+        
+    }
+  
+  
+}
+
+
+.body {
+    background-color: pink;
     color: black;
     font-family: typography.$primary-font;
+    
+
+    @media only screen and (max-width: 600px) {
+        display: flex;
+        flex-wrap: wrap;
+
+        width: 45vw;
+    }
+    
 }
 
 .nav {

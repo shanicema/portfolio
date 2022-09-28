@@ -1,7 +1,25 @@
-body {
-  background-color: white;
+.projects__group__item--thumbnail {
+  border: 2px solid black;
+}
+@media only screen and (max-width: 600px) {
+  .projects__group__item--thumbnail {
+    display: flex;
+    flex-wrap: wrap;
+    width: 20vw;
+  }
+}
+
+.body {
+  background-color: pink;
   color: black;
   font-family: "Montserrat", sans-serif;
+}
+@media only screen and (max-width: 600px) {
+  .body {
+    display: flex;
+    flex-wrap: wrap;
+    width: 45vw;
+  }
 }
 
 .nav__menu {
