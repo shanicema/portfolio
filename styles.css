@@ -1,0 +1,11 @@
+body {
+  background-color: white;
+  color: black;
+  font-family: "Montserrat", sans-serif;
+}
+
+.nav__menu {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}

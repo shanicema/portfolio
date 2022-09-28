@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../Nology_Course"
+		},
+		{
+			"path": "../new-zealand-consultancy"
+		},
+		{
+			"path": "../Nology_PreCourse"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Nology_Course"
+	}
+}
