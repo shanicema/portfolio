@@ -1,39 +1,34 @@
 @use "./partials/palette";
 @use "./partials/typography";
-
-
-
-.projects {
-    &__group__item--thumbnail{
-       
-            border: 2px solid black;
-
-            @media only screen and (max-width: 600px) {
-                display: flex;
-                flex-wrap: wrap;
-                width: 20vw;
-            }
-        
-        
-    }
-  
-  
-}
+@use "./media-queries/devices";
+@use "./modules/mixins";
 
 
 .body {
-    background-color: pink;
+    background-color: whitesmoke;
     color: black;
     font-family: typography.$primary-font;
-    
-
-    @media only screen and (max-width: 600px) {
-        display: flex;
-        flex-wrap: wrap;
-
-        width: 45vw;
+    @include mixins.screen-size(0px, devices.$xxs) {
+        width: 90vw;  
     }
-    
+    @include mixins.screen-size(devices.$xxs, devices.$xs) {
+        width: 90vw;
+    }
+    @include mixins.screen-size(devices.$xs, devices.$sm) {
+        width: 95vw;
+    }
+    @include mixins.screen-size(devices.$sm, devices.$md) {
+        width: 95vw;
+    }
+    @include mixins.screen-size(devices.$md, devices.$lg) {
+        width: 95vw;
+    }
+    @include mixins.screen-size(devices.$lg, devices.$xl) {
+        width: 95vw;
+    }    
+    @include mixins.screen-size(devices.$xl, devices.$xxl) {
+        width: 95vw;
+    }        
 }
 
 .nav {
@@ -43,4 +38,40 @@
         list-style: none;
     }
 }
+
+.projects {
+    &__group__item--thumbnail{
+       
+        border: 2px solid black;
+        @include mixins.screen-size(0px, devices.$xxs) {
+            width: 60vw;  
+        }
+        @include mixins.screen-size(devices.$xxs, devices.$xs) {
+            width: 60vw;
+        }
+        @include mixins.screen-size(devices.$xs, devices.$sm) {
+            width: 55vw;
+        }
+        @include mixins.screen-size(devices.$sm, devices.$md) {
+            width: 45vw;
+        }
+        @include mixins.screen-size(devices.$md, devices.$lg) {
+            width: 35vw;
+        }
+        @include mixins.screen-size(devices.$lg, devices.$xl) {
+            width: 30vw;
+        }    
+        @include mixins.screen-size(devices.$xl, devices.$xxl) {
+            width: 30vw;
+        }                
+    }
+}
+
+
+.about {
+    &__img {
+        @extend .projects__group__item--thumbnail;  
+    }
+}
+
 
