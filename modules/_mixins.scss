@@ -1,10 +1,8 @@
 
 @use "../media-queries/devices";
 
-@mixin screen-size($min, $max) {
-    @media only screen and (min-width: ($min + 1)) and (max-width: $max) {
-        display: flex;
-        flex-wrap: wrap;
+@mixin screen-size($min, $max: 5000px) {
+    @media only screen and (min-width: ($min +1)) and (max-width: $max) {
         @content;
     }
 }

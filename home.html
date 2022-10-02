@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shanice Ma | Full Stack Developer</title>
     <link rel="stylesheet" a href="styles.css">
+    <script src="./index.js"></script>
 
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/9f5c3c4e92.js" crossorigin="anonymous"></script>
@@ -13,58 +14,92 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:ital,wght@0,100;0,700;1,300&display=swap" rel="stylesheet">
-<body class="body">
-    <!-- Navigation Bar -->
+<body>
+    <canvas id="canvas" width="1920" height="922"></canvas>
     <header class="navbar">
-
-        <!-- Navbar Logo-->
-        <h2 class="navbar__logo">shanice.</h2>
-
         <!-- Menu Container -->
-        <div class="navbar_menu">
-            <div class="navbar__menu__hBtn" onclick="toggleMenu();">
+        <div class="navbar__menu">
+            <!-- <div class="navbar__menu__hBtn" onclick="toggleMenu();">
                 <div class="navbar__menu__hBtn--bar1"></div>
                 <div class="navbar__menu__hBtn--bar2"></div>
                 <div class="navbar__menu__hBtn--bar3"></div>
-            </div>
-
+            </div> -->
+        
             <!-- Menu Links -->
                 <nav>
                     <ul class="navbar__menu__container">
                         <li class="navbar__menu__container__item">
-                            <a href="#home">Home</a>
+                            <a class="navbar__menu__container__text" href="#home">01 home</a>
                         </li> 
                         <li>
-                            <a href="#skills">Skills</a>
+                            <a class="navbar__menu__container__text" href="#skills">02 skills</a>
                         </li> 
                         <li>
-                            <a href="#projects">Projects</a>
+                            <a class="navbar__menu__container__text navbar__menu__container__text" href="#projects">03 projects</a>
                         </li> 
                         <li>
-                            <a href="#about">About</a>
+                            <a class="navbar__menu__container__text" href="#about">04 about</a>
                         </li> 
                         <li>
-                            <a href="#contact">Contact</a>
+                            <a class="navbar__menu__container__text" href="#contact">05 contact</a>
                         </li>                         
                     </ul>
                 </nav>               
-        </div>        
+        </div>     
     </header>
+
+    <!-- Theme -->
+    <div class="container">
+        <div class="container__item landing-page-container">
+            <div class="content__wrapper">
+
+                <header class="header">
+                    <div class="menu-icon header__item">
+                        <span class="menu-icon__line"></span>
+                    </div>
+
+                    <h1 class="heading header__item">Hi, I'm Shanice. A junior full stack developer.</h1>
+
+                </header>
+
+                <p class="coords">N 49° 16' 35.173"  /  W 0° 42' 11.30"</p>
+
+                <div class="ellipses-container">
+
+                    <h2 class="greeting">Welcome.</h2>
+
+                    <div class="ellipses ellipses__outer--thin">
+
+                        <div class="ellipses ellipses__orbit"></div>
+
+                    </div>
+
+                    <div class="ellipses ellipses__outer--thick"></div>
+                </div>
+
+                
+                
+            </div>
+
+        </div>
+
+    </div>
+
     
+
 <!-- Content container for everything except the header and footer -->
 <div class="content">
    
 
     <!-- Landing -->
-    <section class="landing"><a name="home"></a>
-        <h1 class="landing__head">Hi, I'm Shanice!</h1>
-        <h3 class="landing__subhead">Junior Full-Stack Developer</h3>
-        <p class="landing__text">Enter landing page text here</p>
-    </section>
+    <!-- <section class="landing"><a name="home"></a>
+        <h1 class="landing__head">Hi. I'm Shanice.</h1>
+        <h5 class="landing__subhead">A junior full-stack developer.</h5>
+    </section> -->
 
     <!-- Tech Skills -->
     <section class="skills"><a name="skills"></a>
-        <h2 class="skills__head skills__head--left">I can code in: </h2>
+        <h2 class="skills__head skills__head--left">Technical Skills</h2>
            <div class="skills__card">
                 <div class="skills__card skills__card--item">
                     <p class="skills__card skills__card--item-text">
@@ -86,7 +121,7 @@
                 </div>
                 <div class="skills__card skills__card--item">
                     <p class="skills__card skills__card--item-text">
-                        <i class="fa-brands fa-git fa-2xl"></i>
+                        <i class="fa-brands fa-github fa-2xl"></i>
                        git
                     </p>
                 </div>
@@ -95,109 +130,112 @@
 
     <!-- Projects -->
     <section class="projects"><a name="projects"></a>
-        <h2 class="projects__head projects__head--center">I've worked on </h2>
+        <h2 class="projects__head projects__head--center">Portfolio Work</h2>
         
         <div class="projects__group">
             <!-- Each project is a group item -->
-        </div>
-        <div class="projects__group__item">
-            <!-- Each projects__group__item has a:
-                 1. name, 
-                 2. image, 
-                 3. short description,
-                 4. link to a live version of project,
-                 5. link to matching GitHub Repo 
-                -->
-            <div class="projects__group__item--card">
-                <img class="projects__group__item--thumbnail" src="./placeholder-image.png" alt="project-image">
-                <h3 class="projects__group__item--name">Project Name #1</h3>
-                <p class="projects__group__item--desc" >Project Short Description</p>
-                <div class="projects__group__item--links">
-                    <a href="">Link to GitHub</a>
-                    <a href="">Link to Live Project</a>
-                </div>
+            <div class="projects__group__item">
+                <!-- Each projects__group__item has a:
+                     1. name, 
+                     2. image, 
+                     3. short description,
+                     4. link to a live version of project,
+                     5. link to matching GitHub Repo 
+                    -->
+                <img class="projects__group__item__thumbnail" src="./placeholder-image.png" alt="project-image">
+                <h3 class="projects__group__item__name">Project Name #1</h3>
+                <p class="projects__group__item__desc" >Project Short Description</p>
+                <div class="projects__group__item__container">
+                    <i class="fa-solid fa-code"></i>
+                    <a class="projects__group__item__container__links" href="https://github.com/shanicema"></a>
+                    <i class="fa-solid fa-link"></i>
+                    <a class="projects__group__item__container__links" href="https://github.com/shanicema"></a>
+                </div>      
             </div>
-        </div>
-        <div class="projects__group__item">
-            <!-- Each projects__group__item has a:
-                 1. name, 
-                 2. image, 
-                 3. short description,
-                 4. link to a live version of project,
-                 5. link to matching GitHub Repo 
-                -->
-            <div class="projects__group__item--card">
-                <img class="projects__group__item--thumbnail" src="./placeholder-image.png" alt="project-image">
-                <h3 class="projects__group__item--name">Project Name #2</h3>
-                <p class="projects__group__item--desc" >Project Short Description</p>
-                <div class="projects__group__item--links">
-                    <a href="">Link to GitHub</a>
-                    <a href="">Link to Live Project</a>
-                </div>
+            <div class="projects__group__item">
+                <!-- Each projects__group__item has a:
+                     1. name, 
+                     2. image, 
+                     3. short description,
+                     4. link to a live version of project,
+                     5. link to matching GitHub Repo 
+                    -->
+                <img class="projects__group__item__thumbnail" src="./placeholder-image.png" alt="project-image">
+                <h3 class="projects__group__item__name">Project Name #2</h3>
+                <p class="projects__group__item__desc" >Project Short Description</p>
+                <div class="projects__group__item__container">
+                    <i class="fa-solid fa-code"></i>
+                    <a class="projects__group__item__container__links" href="https://github.com/shanicema"></a>
+                    <i class="fa-solid fa-link"></i>
+                    <a class="projects__group__item__container__links" href="https://github.com/shanicema"></a>
+                </div>      
             </div>
-        </div>
-        <div class="projects__group__item">
-            <!-- Each projects__group__item has a:
-                 1. name, 
-                 2. image, 
-                 3. short description,
-                 4. link to a live version of project,
-                 5. link to matching GitHub Repo 
-                -->
-            <div class="projects__group__item--card">
-                <img class="projects__group__item--thumbnail" src="./placeholder-image.png" alt="project-image">
-                <h3 class="projects__group__item--name">Project Name #3</h3>
-                <p class="projects__group__item--desc" >Project Short Description</p>
-                <div class="projects__group__item--links">
-                    <a href="">Link to GitHub</a>
-                    <a href="">Link to Live Project</a>
-                </div>
+            <div class="projects__group__item">
+                <!-- Each projects__group__item has a:
+                     1. name, 
+                     2. image, 
+                     3. short description,
+                     4. link to a live version of project,
+                     5. link to matching GitHub Repo 
+                    -->
+                <img class="projects__group__item__thumbnail" src="./placeholder-image.png" alt="project-image">
+                <h3 class="projects__group__item__name">Project Name #3</h3>
+                <p class="projects__group__item__desc" >Project Short Description</p>
+                <div class="projects__group__item__container">
+                    <i class="fa-solid fa-code"></i>
+                    <a class="projects__group__item__container__links" href="https://github.com/shanicema"></a>
+                    <i class="fa-solid fa-link"></i>
+                    <a class="projects__group__item__container__links" href="https://github.com/shanicema"></a>
+                </div>       
             </div>
-        </div>
-        <div class="projects__group__item">
-            <!-- Each projects__group__item has a:
-                 1. name, 
-                 2. image, 
-                 3. short description,
-                 4. link to a live version of project,
-                 5. link to matching GitHub Repo 
-                -->
-            <div class="projects__group__item--card">
-                <img class="projects__group__item--thumbnail" src="./placeholder-image.png" alt="project-image">
-                <h3 class="projects__group__item--name">Project Name #4</h3>
-                <p class="projects__group__item--desc" >Project Short Description</p>
-                <div class="projects__group__item--links">
-                    <a href="">Link to GitHub</a>
-                    <a href="">Link to Live Project</a>
-                </div>
+            <div class="projects__group__item">
+                <!-- Each projects__group__item has a:
+                     1. name, 
+                     2. image, 
+                     3. short description,
+                     4. link to a live version of project,
+                     5. link to matching GitHub Repo 
+                    -->
+                <img class="projects__group__item__thumbnail" src="./placeholder-image.png" alt="project-image">
+                <h3 class="projects__group__item__name">Project Name #4</h3>
+                <p class="projects__group__item__desc" >Project Short Description</p>
+                <div class="projects__group__item__container">
+                    <i class="fa-solid fa-code"></i>
+                    <a class="projects__group__item__container__links" href="https://github.com/shanicema"></a>
+                    <i class="fa-solid fa-link"></i>
+                    <a class="projects__group__item__container__links" href="https://github.com/shanicema"></a>
+                </div>     
             </div>
-        </div>
-        <div class="projects__group__item">
-            <!-- Each projects__group__item has a:
-                 1. name, 
-                 2. image, 
-                 3. short description,
-                 4. link to a live version of project,
-                 5. link to matching GitHub Repo 
-                -->
-            <div class="projects__group__item--card">
-                <img class="projects__group__item--thumbnail" src="./placeholder-image.png" alt="project-image">
-                <h3 class="projects__group__item--name">Project Name #5</h3>
-                <p class="projects__group__item--desc" >Project Short Description</p>
-                <div class="projects__group__item--links">
-                    <a href="">Link to GitHub</a>
-                    <a href="">Link to Live Project</a>
-                </div>
+            <div class="projects__group__item">
+                <!-- Each projects__group__item has a:
+                     1. name, 
+                     2. image, 
+                     3. short description,
+                     4. link to a live version of project,
+                     5. link to matching GitHub Repo 
+                    -->
+                <img class="projects__group__item__thumbnail" src="./placeholder-image.png" alt="project-image">
+                <h3 class="projects__group__item__name">Project Name #5</h3>
+                <p class="projects__group__item__desc" >Project Short Description</p>
+               
+                <div class="projects__group__item__container">
+                    <i class="fa-solid fa-code"></i>
+                    <a class="projects__group__item__container__links" href="https://github.com/shanicema"></a>
+                    <i class="fa-solid fa-link"></i>
+                    <a class="projects__group__item__container__links" href="https://github.com/shanicema"></a>
+                </div>       
             </div>
         </div>
     </section>
 
     <!-- About Me Section -->
     <section class="about"><a name="about"></a>
-        <img class="about__img" src="profile.jpeg">
         <h2 class="about__head">About Me</h2>
-        <p class="about__para">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam reprehenderit eius, modi sequi molestias magnam sapiente dicta, consequatur vero amet cupiditate, aliquam quo nihil ad accusamus pariatur recusandae deserunt.
-        </p>
+        <div class="about__container"> 
+            <img class="about__img" src="profile.jpeg">
+            <p class="about__para">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam ex quae ea labore non error quibusdam debitis eius nobis voluptatibus? Maiores harum esse doloribus nostrum iure ad ea ducimus enim. I've worked with a direct sales organisation, a publicly listed finance company and a start-up turned scale-up technology consultancy.
+            </p>
+        </div>
     </section>
 </div>
 
@@ -208,22 +246,28 @@
         2. GitHub profile link,
         3. LinkedIn profile link 
     -->
-    <footer class="contact"><a name="contact"></a>
+    <section class="contact"><a name="contact"></a>
         <h2 class="contact__head">
             Get In Touch
         </h2>
-        <div class="contact__icons">
-            <p class="contact__icons--text">
-                <a href="mailto:mashnce@gmail.com">mashnce@gmail.com</a>
+        <div class="contact__container">
+            <p>
+                <i class="fa-solid fa-envelope fa-2xl"></i>
+                <a class="contact__container__text" href="mailto:mashnce@gmail.com">mashnce@gmail.com</a>
             </p>
-            <p class="contact__icons--text">
-                <a href="https://www.linkedin.com/in/shanicema/">@shanicema</a>
+            <p>
+                <i class="fa-brands fa-linkedin fa-2xl"></i>
+                <a class="contact__container__text" href="https://www.linkedin.com/in/shanicema/">@shanicema</a>
             </p>
-            <p class="contact__icons--text">
-                <a href="https://github.com/shanicema">@shanicema</a>
+            <p>
+                <i class="fa-brands fa-github fa-2xl"></i>
+                <a class="contact__container__text" href="https://github.com/shanicema">@shanicema</a>
             </p>            
         </div>
-        <p class="footer-signature">Built in HTML, Sass and JS by Shanice Ma.</p>
+    </section>
+
+    <footer>
+        <p class="footer__signature">Built in HTML and Sass by Shanice Ma.</p>
     </footer>
 </body>
 </html>
