@@ -4,34 +4,19 @@
 @use "./modules/mixins";
 
 
-
-canvas {
-    opacity: 0.3;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-
-
-
+// Landing Page Theme
 
 .container__item {
     margin: 0 auto 40px;
-    background-color: whitesmoke;
+    background-color: palette.$secondary-colour;
 }
 
 .landing-page-container {
     width: 100%;
     min-height: 100%;
     height: 90rem;
-    background-image: url('https://s29.postimg.org/vho8xb2pj/landing_bg.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-    overflow: hidden;
     font-family: typography.$primary-font;
-    color: palette.$tiber;
+    color: palette.$landing-text-primary;
 }
 
 .content__wrapper {
@@ -48,39 +33,6 @@ canvas {
     padding: 4.5rem 0;
 }
 
-.menu-icon {
-    width: 2.5rem;
-    height: 1.5rem;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.menu-icon__line {
-    width: 1.5rem;
-    height: 0.2rem;
-    background-color: palette.$elephant;
-    display: block;
-
-    &:before,
-    &:after {
-        content: '';
-        width: 1.5rem;
-        height: 0.2rem;
-        background-color: palette.$elephant;
-        display: inline-block;
-        position: relative;
-    }
-
-    &:before {
-        left: 0.5rem;
-        top: -0.6rem;
-    }
-
-    &:after {
-        top: -1.8rem;
-    }
-}
-
 .heading {
     width: 100%;
     font-size: 2rem;
@@ -88,10 +40,9 @@ canvas {
     margin: 0;
     line-height: 1.7rem;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
     opacity: 0.5;
 }
-
 
 .coords {
     font-size: 1rem;
@@ -136,7 +87,7 @@ canvas {
             height: 0.3rem;
             border-radius: 50%;
             display: inline-block;
-            background-color: palette.$elephant;
+            background-color: palette.$landing-text-secondary;
             position: relative;
             top: -2.35rem;
             left: 11.35rem;
@@ -147,7 +98,6 @@ canvas {
             }
         }
     }
-
 }
 
 .ellipses {
@@ -165,12 +115,8 @@ canvas {
     border-color: rgba(9, 56, 62, 0.1);
     animation: ellipsesOrbit 15s ease-in-out infinite;
 
-
     &:after {
       content: "";
-      background-image: url('https://s29.postimg.org/5h0r4ftkn/ellipses_dial.png');
-      background-repeat: no-repeat;
-      background-position: center;
       top: 0;
       left: 0;
       bottom: 0;
@@ -183,7 +129,7 @@ canvas {
 .ellipses__outer--thick {
     width: 99.5%;
     padding-top: 99.5%;
-    border-color: palette.$tiber transparent;
+    border-color: palette.$landing-text-primary transparent;
     border-width: 2px;
     transform: rotate(-45deg);
     animation: ellipsesRotate 15s ease-in-out infinite;
@@ -193,7 +139,7 @@ canvas {
     width: 2.5rem;
     height: 2.5rem;
     border-width: 2px;
-    border-color: palette.$tiber;
+    border-color: palette.$landing-text-primary;
     top: -1.25rem;
     right: calc(50% - 1.25rem);
 
@@ -203,17 +149,15 @@ canvas {
         height: 0.7rem;
         border-radius: 50%;
         display: inline-block;
-        background-color: palette.$tiber;
+        background-color: palette.$landing-text-primary;
         margin: 0 auto;
         left: 0;
         right: 0;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-
     }
 }
-
 
 @keyframes ellipsesRotate {
     0% {
@@ -236,6 +180,8 @@ canvas {
 }
 
 
+// General Styling
+
 * {
     box-sizing: border-box;
     margin: 0px;
@@ -251,195 +197,233 @@ body {
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
-    
-    background-color: white;
-
-    color: rgb(81, 81, 81);;
+    background-color: palette.$primary-colour;
+    color: palette.$general-text-colour2;
     font-family: typography.$primary-font;
-    font-size: 14px;  
+    font-size: 16px;  
 }
 
 section {
     padding: 20px;
-
-    margin: 0 auto;
-    // max-width: 1440px;
-    
-    display: flex;
+    margin: 0 auto;    
+    @include mixins.flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
+// Navbar Styling
 
 .navbar {
-    
     &__menu__container {
         list-style: none;
         display: flex;
-        flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        margin-top: 30px;
-        margin-bottom: 30px;;
+        flex-direction: column;
+        margin-top: 20px;
+        margin-bottom: 30px;
 
-        @include mixins.screen-size(devices.$sm) {
-            justify-content:space-evenly;
+        @include mixins.screen-size(devices.$xxs) {
+            justify-content:space-around;
             flex-direction: row;
         }  
-
+       
         &__text {
-            font-size:18px;
+            font-size:16px;
             text-decoration: none;
-            color:black;  
+            color: palette.$general-text-colour1;
             opacity: 0.5;
+            transition: 150ms ease-in-out;
+            position: relative;
+            
+            &:before {
+                content: '';
+                width: 0;
+                height: 2px;
+                position: absolute;
+                top: 0;
+                right: 50%;
+                transition: 150ms ease-in-out;
+                transform: translateX(50%);
+                background-color: palette.$hover-color;
+                display: block;
+            }
+
             &:hover {
-                color: lightblue;
-                text-decoration:overline;
-            }         
-            
-            
+                color: palette.$hover-color;
+
+                &:before {
+                    width: 100%;
+                }
+            }          
         }
     }
 }
 
-
-// .landing {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     margin-bottom: 50px;
-//     &__head {
-//         font-size: 40px;
-//     }
-    
-//     &__subhead {
-//         font-size:20px;
-//     }
-// }
+// Skills Styling
 
 .skills{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include mixins.flex;
     line-height: 3em;
     
     &__card {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        
         justify-content: stretch;
         align-items: center;
-        margin: 10px;   
-        
+        margin: 10px;  
+        margin-bottom: 20px; 
         position: relative;
-        left: 5%;
-
-        
+        left: 5%;        
     }
-    
 }
 
+// Projects Styling
+
 .projects {
-    line-height: 3em;
-    background-color: whitesmoke;
+    background-color: palette.$secondary-colour;
    
+    &__head {
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
 
     &__group {
         display: flex;
         flex-wrap: wrap;
-        justify-content:space-evenly;
+        justify-content: center;
         align-items: center;
-        margin-top: 50px;
+        margin-top: 40px;
+        margin-bottom: 50px;
  
        
         &__item {
             margin-bottom: 40px;
-            display: flex;
+            @include mixins.flex;
             flex-direction: column;
-            align-items: center;
 
             @include mixins.screen-size(devices.$xs) {
-                width: 40%;
+                margin-right: 50px;
+                margin-left: 50px;
+            }
+
+            &__name {
+                margin-top: 25px;
+            }
+
+            &__desc {
+                margin-bottom: 15px;
             }
 
             &__thumbnail {
-                background-color: white;
-                width: 400px;
-                height: 300px;;
-                border: 2px solid lightgray;
+                background-color: palette.$primary-colour;
+                max-width: 400px;
+                width: 100%;
+                border: 2px solid rgb(237, 236, 236);
                 border-radius: 50px;
-            }            
+                transition: 150ms ease-in-out;
+                box-shadow: 10px 10px 15px 2px rgba(0, 0, 0, 0.2);
+                &:hover {
+                    transform: translate(4px, 4px);
+                    box-shadow: 20px 20px 20px 2px rgba(0, 0, 0, 0.2);
+                }
+            }     
+            
+            &__container {
+                &__links {
+                    color: palette.$general-text-colour2;
+                    text-decoration: none;
+                    font-size: 18px;
+                    word-spacing: 8px;
+                }
+            }
         }
     }   
 }
 
 
 .fa-solid:hover {
-    color: skyblue;
+    color: palette.$hover-color;
 }
 
 .fa-brands:hover {
-    color: skyblue;
+    color: palette.$hover-color;
 }
+
+
+// About Styling
 
 .about { 
    
     &__img {
         margin-bottom: 30px;
-        width: 400px;
+        max-width: 400px;
+        width: 100%;
         border-radius: 50px;
-        margin: 0px 0px 40px 120px;
+        transition: 150ms ease-in-out;
+        box-shadow: 10px 10px 15px 2px rgba(0, 0, 0, 0.2);
+        &:hover {
+            transform: translate(4px, 4px);
+            box-shadow: 20px 20px 20px 2px rgba(0, 0, 0, 0.2);
+        }
     }
 
+    &__head {
+        margin-top: 50px;
+    }
     &__para {
-        padding: 60px;
+        padding: 10px;
+        margin: 20px;
+        text-align:left;
     }
 
     &__container {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        justify-content:center;
-        align-items: center;
-        text-align: center;
-        width: 100%;
-        margin-top: 20px;
-       
-        
-
+        @include mixins.flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin-top: 10px;
+    
         @include mixins.screen-size(devices.$md) {
-          
+            @include mixins.flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            padding: 70px;
+            width: 100%;
         }
     }
 }
 
+// Contact Styling
 
 .contact {
-   
-    display: flex;
-    justify-content:center;
-    align-items: center;
+    @include mixins.flex;
     text-align: left;
     width: 100%;
-    background-color: whitesmoke;
+    background-color: palette.$secondary-colour;
    
+    &__head {
+        margin-top:100px;
+        margin-bottom: 20px;
+    }
     &__container {
         line-height: 3em;
         margin-top: 20px;
+        margin-bottom: 100px;
         &__text {
-            color: rgb(81, 81, 81);
+            color: palette.$general-text-colour2;
             text-decoration: none;
+            &:hover {
+                color:palette.$hover-color;
+            }
         }
     }
 }
 
+// Footer Styling
 
-.footer {
-    &__signature {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        margin-top: 40px;
+footer {
+    background-color: palette.$secondary-colour;
+    text-align:center;
+    padding: 10px;  
+    margin-bottom: 10px;
     }
-}
 
